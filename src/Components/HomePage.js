@@ -18,12 +18,12 @@ const HomePage=()=>{
     // *data and isFeching is provided by REDUX
     // * we have created a hook to manage the API request
     const { data, isFetching } = useGetCryptosQuery(10);
-    console.log('this is the data in homepage:',data)
+    console.log('[HomePage.data',data)
     // ! what is the point of the using the "?."" in this case?
     // *we will use this to represent our stats
     const globalStats = data?.data?.stats
-
-    if(isFetching) return <Loader/>
+    console.log('[HomePage.globalStats',data)
+    // if(isFetching) return <Loader/>
 
 
     // * for <Cryptocurrencies simplified/> and <News simplified/>; 
@@ -31,13 +31,14 @@ const HomePage=()=>{
     return (
         <>
             <Title level={1} className='heading'>Global Crypto Stats; you left off at 1:33:32 on 10/15/2021</Title>
-            <Row>
+            {globalStats && <Row>
+                
                 <Col span ={12}><Statistic title='Total CryptoCurrencies' value ={globalStats.total} /></Col>
                 <Col span ={12}><Statistic title='Total Exchanges' value ={millify(globalStats.totalExchanges)} /></Col>
                 <Col span ={12}><Statistic title='Total Market Cap:' value ={millify(globalStats.totalMarketCap)} /></Col>
                 <Col span ={12}><Statistic title='Total 24hr Volume' value ={millify(globalStats.total24hVolume)} /></Col>
                 <Col span ={12}><Statistic title='Total Markets' value ={millify(globalStats.totalMarkets)} /></Col>
-            </Row>
+            </Row>}
             <div className='home-heading-container'>
                 <Title level={2} className='home-title'>Top 10 Crypto Currencies in the world</Title>
                 <Title level={3} className='show-more'><Link to='/cryptocurrencies'>Show more</Link></Title>

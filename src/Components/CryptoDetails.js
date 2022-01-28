@@ -13,7 +13,10 @@ const {Title,Text} = Typography
 const {Option} = Select
 
 const CryptoDetails = () => {
-    const { coinId } = useParams();
+    const { coinId,uuid } = useParams();
+    console.log('uuid',uuid)
+    console.log('coinId',coinId)
+
     const [timeperiod, setTimeperiod] = useState('7d');
     const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
     const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timeperiod });
@@ -56,7 +59,6 @@ const CryptoDetails = () => {
           {time.map((date) => <Option key={date}>{date}</Option>)}
         </Select>
         <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails.price)} coinName={cryptoDetails.name} />
-        {/* <LineChart/> */}
         <Col className="stats-container">
           <Col className="coin-value-statistics">
             <Col className="coin-value-statistics-heading">

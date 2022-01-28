@@ -19,12 +19,7 @@ const News=({simplified})=>{
 
     if(!cryptoNews?.value) return <Loader/>
 
-    // * xs; means how wide is it going to be on extra small devices
-    // * sm; means 12 per row
-    // *<Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>; this tells us how many ours ago the article was created
-    // *<Text className="provider-name">{news.provider[0]?.name}</Text>; this privdes the news provider's name
-    // ! for explanatin of the <SelecT></SelecT>; please look at 1:29:10
-        // * this essentially allows us to select the top 100 cryptos in a drop down bar for our news articles
+    
     return (
          <Row gutter={[24, 24]}>
       {!simplified && (

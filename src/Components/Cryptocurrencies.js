@@ -17,7 +17,7 @@ const Cryptocurrencies=({ simplified })=>{
 
     // *cryptosList?.data?.coins; this will give us access to all the coins
     const [cryptos, setCryptos] = useState();
-    console.log('this is cryptos from CryptoCurrencies.js',cryptos)
+    console.log('[Cryptocurrencies.cryptos',cryptos)
 
 
     //*this allows us to filter out cryptos we want to view 
@@ -48,6 +48,7 @@ const Cryptocurrencies=({ simplified })=>{
             <Row gutter={[32,32]} className='crypto-card-container'>
                 {cryptos?.map((currency)=>(
                     <Col xs={24} sm={12} lg={6} className='crypto-card' key={currency.id}>
+                        {/* <Link to={`/crypto/${currency.uuid}`}> */}
                         <Link to={`/crypto/${currency.id}`}>
                             <Card 
                             title={`${currency.rank}. ${currency.name}`}
