@@ -13,14 +13,19 @@ const {Title,Text} = Typography
 const {Option} = Select
 
 const CryptoDetails = () => {
-    const { coinId,uuid } = useParams();
-    console.log('uuid',uuid)
+    const { coinId} = useParams();
+    // console.log('uuid',uuid)
     console.log('coinId',coinId)
 
     const [timeperiod, setTimeperiod] = useState('7d');
     const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
+    console.log('[CryptoDetails.useGetCryptoDetailsQuery.data',data)
+
     const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timeperiod });
     const cryptoDetails = data?.data?.coin;
+    console.log('[CryptoDetails.cryptoDetails',cryptoDetails)
+    console.log('[CryptoDetails.useGetCryptoHistoryQuery',coinHistory)
+    // console.log('[CryptoDetails.data',data)
   
     if (isFetching) return <Loader />;
   
@@ -29,29 +34,28 @@ const CryptoDetails = () => {
     const stats = [
       { title: 'Price to USD', value: `$ ${cryptoDetails.price && millify(cryptoDetails.price)}`, icon: <DollarCircleOutlined /> },
       { title: 'Rank', value: cryptoDetails.rank, icon: <NumberOutlined /> },
-      { title: '24h Volume', value: `$ ${cryptoDetails.volume && millify(cryptoDetails.volume)}`, icon: <ThunderboltOutlined /> },
+      { title: '24h Volume', value: `$ ${cryptoDetails['24hVolume'] && millify(cryptoDetails['24hVolume'])}`, icon: <ThunderboltOutlined /> },
       { title: 'Market Cap', value: `$ ${cryptoDetails.marketCap && millify(cryptoDetails.marketCap)}`, icon: <DollarCircleOutlined /> },
       { title: 'All-time-high(daily avg.)', value: `$ ${millify(cryptoDetails.allTimeHigh.price)}`, icon: <TrophyOutlined /> },
     ];
+    console.log('[CryptoDetails.stats',stats)
   
     const genericStats = [
       { title: 'Number Of Markets', value: cryptoDetails.numberOfMarkets, icon: <FundOutlined /> },
       { title: 'Number Of Exchanges', value: cryptoDetails.numberOfExchanges, icon: <MoneyCollectOutlined /> },
-      { title: 'Aprroved Supply', value: cryptoDetails.approvedSupply ? <CheckOutlined /> : <StopOutlined />, icon: <ExclamationCircleOutlined /> },
-      { title: 'Total Supply', value: `$ ${millify(cryptoDetails.totalSupply)}`, icon: <ExclamationCircleOutlined /> },
-      { title: 'Circulating Supply', value: `$ ${millify(cryptoDetails.circulatingSupply)}`, icon: <ExclamationCircleOutlined /> },
+      // { title: 'Aprroved Supply', value: cryptoDetails.supply.confrimed ? <CheckOutlined /> : <StopOutlined />, icon: <ExclamationCircleOutlined /> },
+      { title: 'Total Supply', value: `$ ${millify(cryptoDetails.supply.total)}`, icon: <ExclamationCircleOutlined /> },
+      { title: 'Circulating Supply', value: `$ ${millify(cryptoDetails.supply.circulating)}`, icon: <ExclamationCircleOutlined /> },
     ];
+    console.log('[CryptoDetails.genericStats',genericStats)
 
-    // *{data?.data?.coin.slug}; slug is a anlternative name for a cryptocurrency
-    //* {time.map((date) => <Option key={date}>{date}</Option>)}; this will allow us to have the differnt time frames in our drop down menu aka '3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y
-    // *{stats.map(({ icon, title, value });  this allows us to presnet our stats; forex. price to USD, Rank, 24h volume and market cap
-    // *{HTMLReactParser(cryptoDetails.description)}; the description is a raw HML, so we want to parse the HTML
-    // * {cryptoDetails.links?.map((link);  this will provide us all the realted cryptocurrency links
+    
     return (
       <Col className="coin-detail-container">
+      
         <Col className="coin-heading-container">
           <Title level={2} className="coin-name">
-            {data?.data?.coin.name} ({data?.data?.coin.slug}) Price
+            {/* {data?.data?.coin.name} ({data?.data?.coin.slug}) Price */}
           </Title>
           <p>{cryptoDetails.name} live price in US Dollar (USD). View value statistics, market cap and supply.</p>
         </Col>

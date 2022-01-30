@@ -23,6 +23,7 @@ const Exchanges = () => {
         <Col span={6}>24h Trade Volume</Col>
         <Col span={6}>Markets</Col>
         <Col span={6}>btcPrice</Col>
+        <Col span={6}>price</Col>
       </Row>
       <Row>
         {exchangesList.map((exchange) => (
@@ -42,12 +43,13 @@ const Exchanges = () => {
                     {/* <Col span={6}>${exchange.btcPrice}</Col> */}
                     <Col span={6}>{millify(exchange.numberOfMarkets)}</Col>
                     <Col span={6}>{exchange.btcPrice}</Col>
+                    <Col span={6}>{exchange.price}</Col>
                     {/* <Col span={6}>${exchange['24hVolume']}</Col> */}
                     {/* <Col span={6}>{millify(exchange.marketShare)}%</Col> */}
                   </Row>
                   )}
               >
-                {HTMLReactParser(exchange.description || '')}
+                {/* {HTMLReactParser(exchange.description || '')} */}
               </Panel>
             </Collapse>
           </Col>

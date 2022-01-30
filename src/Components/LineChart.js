@@ -10,7 +10,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   const coinPrice = [];
   const coinTimestamp = [];
 
-  console.log('this is the CoinHistory in lineChart',coinHistory)
+  console.log('[LineChart.coinHistory',coinHistory)
 // * this loop will provide us our prices
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     coinPrice.push(coinHistory?.data?.history[i].price);
@@ -20,6 +20,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     // * by utlizing new Date; we are converting the data/timestamp into a date
     coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
   }
+  console.log('[LineChart.coinTimestamp',coinTimestamp)
 
   // *the data presented in here will be passed in to <Line data={data} options={options} />
   const data = {

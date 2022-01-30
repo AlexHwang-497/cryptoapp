@@ -50,11 +50,11 @@ export const cryptoApi = createApi({
         }),
         getCryptoDetails: builder.query({
           // *we also need to include the headers in here as well;  this is provided above in the createRequest
-          query: (coinId) => createRequest(`/coin/${coinId}`),
+          query: (coinId) => createRequest(`coin/${coinId}`),
           // query: (coinId) => createRequest(`/coin/Qwsogvtv82FCd`),
       }),
         getCryptoHistory: builder.query({
-          query: ({ coinUUid, timeperiod }) => createRequest(`coin/${coinUUid}/history?timeperiod=${timeperiod}`),
+          query: ({ coinId, timeperiod }) => createRequest(`coin/${coinId}/history?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=${timeperiod}`),
           // query: ({ coinId, timeperiod }) => createRequest(`coin/${coinId}/history?timeperiod=${timeperiod}`),
           // query: ({ coinId, timeperiod }) => createRequest(`coin/${coinId}/history/${timeperiod}`),
       }),
