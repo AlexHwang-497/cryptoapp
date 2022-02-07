@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# CryptoViewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+# Overview
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![projectImage](./src/images/cryptoViewer.gif)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+CryptoViewer is an application that utilizes React, Redux, Rapid API and Ant Design. The application allows users from to view and serach the latest and most up to date information on the current Cryptocurrencies, exchanges and news. sdfasdfas
 
-### `npm test`
+the project is currently hosted at https://crypto-viewer-project.netlify.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Architecture and Technologies
+* JavaScript, the project's front and backend programing language.
+* React, a JavaScript library used to assist with efficient management of rapidly changing data and maintaining a single-page web application structure.
+* Redux, a JavaScript library used in coordination with React to create a centralized store for organizing and accessing data.
+* Node.js, a runtime environment used to execute JavaScript for server-side scripting.
+querying and retrieval of API data.
+* Webpack, a JavaScript bundler to assist with development and production builds.
+* Ant Design UI, CSS3 and HTML5, used to manage the presentation and styling of the project.
+* ChartsJs, a modern JavaScript charting library that helps developers to create beautiful and interactive charts in a React based project.
+* RapidAPI, a third-party API hub that allows developers to find and connect to thousands of API's.
+* CoinRanking, a third-party Cryptocurrency API that provides high-quality data about all coins, like price history, circulating supplies, exchanges, trading pairs, and much more.
+* Bing News Search API, a third-party API that allows users to send a search query to Bing and get back a list of news that are relevant to the search query.
+* Netlify, a cloud hosting platform.
 
-### `npm run build`
+# Functionality
+* A polished, intuitive, responsive user interface/experience.
+* Up to the minute summary of statistics, data, news of top traded Cryptocurrency leaders.
+* Interactive Crytocurrency profiles and charts that allow user to see crypto currency prices fluctuations from 3 hours to 5 years and history/information sources for research.  
+* Ability to filter and search for news and information on specific cryptocurrencies.
+* List of top exchanges based on current trading volume.  
+# Known Issues
+* There are currently no known issues that have been discovered.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- # Future Updates
+* ability to stress test a user portfolio with various hypothetical economic scenarios
+* a portfolio ranking of all portfolios created in the app to see which portfolio ranks the best due to a risk/resturn reward profile. -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ 

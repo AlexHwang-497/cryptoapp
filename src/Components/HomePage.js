@@ -30,7 +30,7 @@ const HomePage=()=>{
         // *the simplified is utilied for when we want to show only for example the top 10 crypto currencies
     return (
         <>
-            <Title level={1} className='heading'>Global Crypto Stats; you left off at 1:33:32 on 10/15/2021</Title>
+            <Title level={1} className='heading'>Global CryptCurrency Stats</Title>
             {globalStats && <Row>
                 
                 <Col span ={12}><Statistic title='Total CryptoCurrencies' value ={globalStats.total} /></Col>

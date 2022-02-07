@@ -19,11 +19,11 @@ const Exchanges = () => {
   return (
     <>
        <Row>
-        <Col span={6}>Exchanges</Col>
-        <Col span={6}>24h Trade Volume</Col>
-        <Col span={6}>Markets</Col>
-        <Col span={6}>btcPrice</Col>
-        <Col span={6}>price</Col>
+        <Col span={4}>Exchanges</Col>
+        <Col span={4}>24h Trade Volume</Col>
+        <Col span={4}>Markets</Col>
+        <Col span={4}>price to BTC Price</Col>
+        <Col span={4}>Current BTC Price($)</Col>
       </Row>
       <Row>
         {exchangesList.map((exchange) => (
@@ -34,18 +34,16 @@ const Exchanges = () => {
                 showArrow={false}
                 header={(
                   <Row key={exchange.id}>
-                    <Col span={6}>
+                    <Col span={4}>
                       <Text><strong>{exchange.rank}.</strong></Text>
                       <Avatar className="exchange-image" src={exchange.iconUrl} />
                       <Text><strong>{exchange.name}</strong></Text>
                     </Col>
-                    <Col span={6}>${millify(exchange['24hVolume'])}</Col>
-                    {/* <Col span={6}>${exchange.btcPrice}</Col> */}
-                    <Col span={6}>{millify(exchange.numberOfMarkets)}</Col>
-                    <Col span={6}>{exchange.btcPrice}</Col>
-                    <Col span={6}>{exchange.price}</Col>
-                    {/* <Col span={6}>${exchange['24hVolume']}</Col> */}
-                    {/* <Col span={6}>{millify(exchange.marketShare)}%</Col> */}
+                    <Col span={4}>${millify(exchange['24hVolume'])}</Col>
+                    <Col span={4}>{millify(exchange.numberOfMarkets)}</Col>
+                    <Col span={4}>{exchange.btcPrice}</Col>
+                    <Col span={4}>${millify(exchange.price)}</Col>
+                    
                   </Row>
                   )}
               >
